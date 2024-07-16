@@ -1,0 +1,59 @@
+.theme-switcher {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 39px;
+  cursor: pointer;
+  padding-inline: 6px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid $switcher-color;
+  }
+
+  &__pointer {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: 1px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $switcher-color;
+    transition: transform 0.3s;
+
+    &--dark {
+      transform: translateX(100%);
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+
+    &--light {
+      background-image: url("../images/light.svg");
+    }
+
+    &--dark {
+      background-image: url("../images/dark.svg");
+    }
+
+    &--lightActive {
+      background-image: url("../images/lightActive.svg");
+    }
+
+    &--darkActive {
+      background-image: url("../images/darkActive.svg");
+    }
+  }
+}

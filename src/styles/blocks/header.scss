@@ -1,0 +1,40 @@
+.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__menu {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__account {
+    width: 40px;
+    @extend %menu-item;
+  }
+
+  &__icon {
+    width: 18px;
+  }
+
+  &__contacts {
+    width: 190px;
+    color: $switcher-color;
+    font-weight: 500;
+    @extend %menu-item;
+  }
+}

@@ -1,0 +1,37 @@
+.page {
+  scroll-behavior: smooth;
+
+  background: $background-color;
+  color: $text-color;
+
+  transition: all 0.3s;
+
+  &--dark-theme {
+    color: $background-color;
+    background: $text-color;
+  }
+
+  &__body {
+    margin: 18px 16px 54px;
+    font-family: InterDisplay, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    max-width: 1280px;
+    margin-inline: auto;
+
+    &--menu--open {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 88px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 89px;
+  }
+}

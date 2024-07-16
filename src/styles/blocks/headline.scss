@@ -1,0 +1,37 @@
+.headline {
+  height: 452px;
+  @include page-grid;
+
+  &__block {
+    grid-column: 1 / 5;
+    align-self: center
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__image-block {
+    border-radius: 300px 300px 0 0;
+    overflow: hidden;
+    grid-column: 6 / 10;
+    grid-row: 1 / 2;
+    display: flex;
+  }
+
+  &__icon-block {
+    border-radius: 300px 300px 0 0;
+    overflow: hidden;
+    grid-column: 9 / 13;
+    grid-row: 1 / 2;
+    display: flex;
+    background: $background-icon;
+    margin-bottom: 28px;
+    margin-left: 18px;
+  }
+
+  &__icon {
+    width: 120px;
+    margin: auto;
+  }
+}

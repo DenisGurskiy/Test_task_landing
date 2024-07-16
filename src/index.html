@@ -1,13 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miami</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Task</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./styles/main.scss" />
     <script src="scripts/main.js" defer></script>
   </head>
-  <body>
-    <h1>Landing Page</h1>
+  <body class="page__body">
+    <header class="page__header header">
+      <a href="#" class="header__logo">
+        <img src="./images/logo.png" alt="logo" />
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li>Nasi lekarze</li>
+          <li>Kontakt</li>
+          <li>Programs</li>
+          <li>O nas</li>
+        </ul>
+      </nav>
+      <div class="header__menu">
+        <div class="header__account">
+          <img
+            class="header__icon"
+            src="./images/account.svg"
+            alt="account icon"
+          />
+        </div>
+        <div class="header__contacts">Skontaktuj się z nami</div>
+        <div class="header__lang">PL</div>
+        <div class="theme-switcher">
+          <div class="theme-switcher__pointer"></div>
+          <div
+            class="theme-switcher__icon theme-switcher__icon--light theme-switcher__icon--lightActive"
+          ></div>
+          <div class="theme-switcher__icon theme-switcher__icon--dark"></div>
+        </div>
+      </div>
+    </header>
+    <main class="page__main">
+      <section class="headline">
+        <div class="headline__block">
+          <h1 class="headline__title">Aкції та Акційні пакети</h1>
+          <p class="headline__text">
+            Ми завжди прагнемо підвищити рівень сервісу надаваних медичних
+            послуг, і вдячні вам за залишений позитивний відгук. Ми беремо до
+            уваги всі коментарі та побажання, які відносяться до нашої роботи.
+            Дякуємо за ваш вибір.
+          </p>
+        </div>
+        <div class="headline__image-block">
+          <img
+            class="headline__image"
+            src="./images/image.png"
+            alt="doctor and parient"
+          />
+        </div>
+        <div class="headline__icon-block">
+          <img
+            class="headline__icon"
+            src="./images/medical.svg"
+            alt="logo of medicine"
+          />
+        </div>
+      </section>
+      <section class="package">
+        <h2 class="package__title">Пакети</h2>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>
