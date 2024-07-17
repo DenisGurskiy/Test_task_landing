@@ -1,0 +1,267 @@
+.promotion {
+  --swiper-width: 320px;
+
+  @include on-tablet {
+    --swiper-width: 558px;
+  }
+
+  @include on-desktop {
+    --swiper-width: 480px;
+  }
+
+  @include on-max {
+    --swiper-width: 629px;
+  }
+
+  @include container;
+
+  &__block {
+    @include page-grid;
+  }
+
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  &__swiper-block {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    grid-column: span 2;
+    grid-row: span 1;
+    margin: auto;
+
+    @include on-tablet {
+      grid-column: span 12;
+    }
+
+    @include on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__wrapper {
+    width: auto;
+    align-self: start;
+    height: auto;
+    position: relative;
+
+    @include on-desktop {
+      height: 294px;
+    }
+  }
+
+  &__slide {
+    width: var(--swiper-width) !important;
+    margin: auto;
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    object-fit: contain;
+
+    @include on-tablet {
+      object-fit: cover;
+    }
+  }
+
+  &__button {
+    display: none !important;
+    flex-shrink: 0;
+    position: static !important;
+    border-radius: 300px 0 0 300px;
+    background-color: $button-color;
+    background-image: url("../images/narrow.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    width: 69px !important;
+    height: 69px !important;
+
+    @include on-tablet {
+      display: block !important;
+    }
+
+    @include on-desktop {
+      width: 69px !important;
+      height: 69px !important;
+    }
+
+    @include on-max {
+      width: 89px !important;
+      height: 89px !important;
+    }
+
+    &:hover {
+      border: 1px solid $orange-color;
+    }
+
+    &:active {
+      background-color: $fon-color;
+    }
+
+    &::after {
+      content: "" !important;
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__info {
+    width: var(--swiper-width);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__name {
+    margin: 0;
+    text-transform: none;
+    font-size: 32px;
+    line-height: 40px;
+    color: black;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__link {
+    font-weight: 500;
+    text-decoration: none;
+    color: $orange-color;
+    max-width: max-content;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $orange-color;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      transform: scale(0);
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__form {
+    padding: 26px 26px 40px;
+    grid-column: span 2;
+    border: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 12;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__form-title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: none;
+  }
+
+  &__input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__input-block {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid $border-light-color;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+  }
+
+  &__label {
+    font-size: 10px;
+    line-height: 10px;
+    color: $label-color;
+  }
+
+  &__input {
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  &__checkbox {
+    display: grid;
+    grid-template-columns: 24px auto;
+    gap: 4px;
+
+    cursor: pointer;
+
+    &-input {
+      display: none;
+    }
+
+    &-custom {
+      width: 24px;
+      height: 24px;
+      border: 1px solid $placeholder-color;
+      border-radius: 5px;
+      position: relative;
+      transition: all 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 7px;
+        width: 6px;
+        height: 9px;
+        border: solid $orange-color;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+    }
+
+    &-input:checked + &-custom {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &-text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__submit {
+    background-color: $orange-color;
+    color: white;
+  }
+}

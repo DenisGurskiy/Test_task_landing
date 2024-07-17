@@ -1,0 +1,16 @@
+.logo-text {
+  display: flex;
+
+  &__link {
+    width: 360px;
+    margin: auto;
+
+    @include on-tablet {
+      width: 735px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

@@ -17,10 +17,6 @@
   }
 }
 
-%h2 {
-  @extend %h1;
-}
-
 %menu-item {
   height: 100%;
   display: flex;
@@ -29,10 +25,10 @@
   border-radius: 50px;
   background: $fon-color;
   cursor: pointer;
-  border: 0 solid transparent;
+  border: 1px solid transparent;
   transition: all 0.3s;
 
   &:hover {
-    border: 1px solid $switcher-color;
+    border: 1px solid $orange-color;
   }
 }

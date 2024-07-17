@@ -1,0 +1,17 @@
+.details-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  border: 0.5px solid $orange-color;
+  font-size: 16px;
+  font-weight: 500;
+  color: $orange-color;
+  background-color: $fon-color;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background: $border-color;
+  }
+}

@@ -1,0 +1,127 @@
+.price {
+  @include container;
+
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  &__block {
+    height: 858px;
+    background-color: white;
+    border: 1px solid $border-color;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    height: 764px;
+    padding-inline: 12px;
+    @include price-grid;
+    row-gap: 26px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 24px 0;
+
+    @include on-tablet {
+      padding-inline: 39px;
+      margin: 48px 0;
+      margin-inline: 12px;
+    }
+
+    @include on-desktop {
+      margin-inline: 61px;
+    }
+  }
+
+  &__list {
+    grid-column: span 2;
+    margin: auto;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    @include on-tablet {
+      grid-column: 1 / 11;
+    }
+  }
+
+  &__headline {
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+    height: 72px;
+    background-color: $background-price;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 12px;
+
+    @include on-tablet {
+      @include price-grid;
+    }
+  }
+
+  &__headline-name {
+    font-family: Oranienbaum, serif;
+    font-size: 24px;
+    line-height: 40px;
+    grid-column: span 2;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 32px;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &--first {
+      @include on-tablet {
+        grid-column: span 2;
+      }
+    }
+
+    &--center {
+      text-align: center;
+
+      @include on-tablet {
+        grid-column: span 5;
+      }
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__item {
+    height: auto;
+    align-items: center;
+    background-color: $button-color;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-inline: 12px;
+
+    @include on-tablet {
+      height: 48px;
+      @include price-grid;
+    }
+  }
+
+  &__item-name {
+    font-family: Oranienbaum, serif;
+    font-size: 24px;
+    line-height: 32px;
+    grid-column: span 2;
+    text-align: center;
+    color: black;
+
+    &--center {
+      grid-column: span 6;
+      text-align: left;
+    }
+  }
+}

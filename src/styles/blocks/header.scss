@@ -1,29 +1,118 @@
 .header {
-  width: 100%;
-  height: 64px;
+  height: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include container;
+
+  @include on-tablet {
+    height: 64px;
+  }
 
   &__logo {
+    width: 48px;
+    height: 48px;
     display: flex;
+
+    @include on-tablet {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__logo-image {
+    width: 100%;
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &--aside {
+      display: block;
+      margin-block: 24px;
+      padding-bottom: 24px;
+      position: relative;
+    }
   }
 
   &__list {
     list-style: none;
     display: flex;
     gap: 24px;
+
+    &--aside {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    max-width: max-content;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $text-color;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      transform: scale(0);
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--dark {
+      color: $background-color;
+
+      &::after {
+        background-color: $background-color;
+      }
+    }
   }
 
   &__menu {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: none;
+
+    @include on-tablet {
+      height: 40px;
+      align-items: center;
+      gap: 20px;
+      display: flex;
+    }
+
+    &--aside {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid $text-color;
+    }
+  }
+
+  &__menu-button {
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/Icon-Burger-menu.svg);
+    background-size: cover;
   }
 
   &__account {
     width: 40px;
+    height: 40px;
     @extend %menu-item;
   }
 
@@ -32,9 +121,37 @@
   }
 
   &__contacts {
-    width: 190px;
-    color: $switcher-color;
+    text-align: center;
+    line-height: 40px;
+    width: 120px;
+    overflow: hidden;
+    text-wrap: nowrap;
+
+    color: $orange-color;
     font-weight: 500;
     @extend %menu-item;
+
+    display: inline-block;
+
+    &::after {
+      content: attr(data-short-text);
+    }
+
+    @include on-desktop {
+      width: 190px;
+
+      &::after {
+        content: attr(data-full-text);
+      }
+    }
+  }
+
+  &__menu-button {
+    display: block;
+    cursor: pointer;
+
+    @include on-tablet {
+      display: none;
+    }
   }
 }

@@ -1,12 +1,5 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
-  }
-}
-
 @mixin on-tablet {
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -17,16 +10,59 @@
   }
 }
 
+@mixin on-max {
+  @media (min-width: 1328px) {
+    @content;
+  }
+}
+
 @mixin page-grid {
+  --count-columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  row-gap: 24px;
+  grid-template-columns: repeat(var(--count-columns), 1fr);
+
+  @include on-tablet {
+    --count-columns: 12;
+
+    column-gap: 16px;
+  }
+
+  @include on-desktop {
+    --count-columns: 12;
+
+    column-gap: 20px;
+  }
+}
+
+@mixin price-grid {
   --count-columns: 2;
 
   display: grid;
   column-gap: 16px;
   grid-template-columns: repeat(var(--count-columns), 1fr);
 
-  @include on-desktop {
-    --count-columns: 12;
+  @include on-tablet() {
+    --count-columns: 10;
 
     column-gap: 20px;
+  }
+}
+
+@mixin container {
+  margin-inline: 12px;
+
+  @include on-tablet {
+    margin-inline: 18px;
+  }
+
+  @include on-desktop {
+    margin-inline: 24px;
+  }
+
+  @include on-max {
+    margin-inline: 0;
   }
 }

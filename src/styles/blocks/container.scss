@@ -1,0 +1,4 @@
+.container {
+  @include page-grid;
+  @include container;
+}

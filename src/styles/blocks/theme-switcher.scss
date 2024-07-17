@@ -12,7 +12,7 @@
   transition: all 0.3s;
 
   &:hover {
-    border: 1px solid $switcher-color;
+    border: 1px solid $orange-color;
   }
 
   &__pointer {
@@ -23,7 +23,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: $switcher-color;
+    background-color: $orange-color;
     transition: transform 0.3s;
 
     &--dark {
