@@ -20,3 +20,13 @@
   background-color: $orange-color;
   border-radius: 10px;
 }
+
+input:-webkit-autofill {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    transition-delay: 9999s;
+    transition-property: background-color;
+  }
+}
