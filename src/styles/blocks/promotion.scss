@@ -45,10 +45,6 @@
     align-self: start;
     height: auto;
     position: relative;
-
-    @include on-desktop {
-      height: 294px;
-    }
   }
 
   &__slide {

@@ -83,6 +83,41 @@
     }
   }
 
+  &__dropdown {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-right: 5px;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__dropdown-content {
+    width: auto;
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 1000;
+    border: 1px solid $text-color;
+    color: $text-color;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+
+    &--active {
+      display: block;
+    }
+
+    &--lang {
+      border: none;
+    }
+
+    max-width: 200px;
+  }
   &__menu {
     display: none;
 
@@ -125,7 +160,7 @@
     line-height: 40px;
     width: 120px;
     overflow: hidden;
-    text-wrap: nowrap;
+    text-decoration: none;
 
     color: $orange-color;
     font-weight: 500;

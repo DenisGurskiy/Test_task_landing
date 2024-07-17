@@ -7,14 +7,6 @@
   margin-top: 0;
   margin-bottom: 24px;
   text-transform: uppercase;
-
-  @include on-tablet {
-    // empty
-  }
-
-  @include on-desktop {
-    // empty
-  }
 }
 
 %menu-item {
